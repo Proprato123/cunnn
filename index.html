@@ -1,87 +1,433 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Salud Digital Colombia S.A.S.</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#333}
-header{background:#0b5ed7;color:#fff;padding:60px 20px;text-align:center}
-nav{background:#083b8a;padding:10px;text-align:center;position:sticky;top:0}
-nav a{color:#fff;text-decoration:none;margin:0 15px;font-weight:bold}
-section{padding:50px 10%;max-width:1100px;margin:auto}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:#fff;border-radius:10px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.15)}
-footer{background:#083b8a;color:#fff;text-align:center;padding:20px}
-button{background:#0b5ed7;color:#fff;border:none;padding:12px 20px;border-radius:5px;cursor:pointer}
-button:hover{background:#084298}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f5f8fc;
+color:#2d3748;
+line-height:1.6;
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+box-shadow:0 2px 15px rgba(0,0,0,.08);
+z-index:1000;
+}
+
+.logo{
+font-size:24px;
+font-weight:700;
+color:#0b5ed7;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#0b5ed7;
+}
+
+/* HERO */
+
+header{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:30px;
+background:
+linear-gradient(rgba(11,94,215,.82),rgba(13,110,253,.80)),
+url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80");
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+.hero{
+max-width:800px;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:22px;
+margin-bottom:35px;
+}
+
+button{
+padding:16px 35px;
+font-size:17px;
+border:none;
+border-radius:50px;
+background:white;
+color:#0b5ed7;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+button:hover{
+transform:translateY(-3px);
+}
+
+/* SECCIONES */
+
+section{
+padding:100px 10%;
+}
+
+.section-title{
+text-align:center;
+font-size:36px;
+margin-bottom:15px;
+color:#0b5ed7;
+}
+
+.subtitle{
+text-align:center;
+max-width:700px;
+margin:auto;
+margin-bottom:50px;
+color:#666;
+}
+
+/* TARJETAS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.35s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 35px rgba(0,0,0,.12);
+}
+
+.icon{
+font-size:45px;
+margin-bottom:15px;
+}
+
+.card h3{
+margin-bottom:10px;
+color:#0b5ed7;
+}
+
+/* SERVICIOS */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.service{
+background:white;
+padding:22px;
+border-left:6px solid #0b5ed7;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+/* BENEFICIOS */
+
+.benefits{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px;
+}
+
+.benefit{
+background:linear-gradient(135deg,#0b5ed7,#4e9cff);
+color:white;
+padding:30px;
+border-radius:18px;
+text-align:center;
+font-weight:500;
+}
+
+/* CONTACTO */
+
+.contact{
+background:white;
+padding:45px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.contact h3{
+margin-bottom:20px;
+color:#0b5ed7;
+}
+
+/* FOOTER */
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:60px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:36px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
+nav ul{
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+}
+
 </style>
 </head>
+
 <body>
 
-<header>
-<h1>Salud Digital Colombia S.A.S.</h1>
-<p>Proyecto Integrador - Cloud Computing</p>
-<button onclick="alert('Función simulada para la demostración académica.')">Agendar cita</button>
-</header>
-
 <nav>
-<a href="#empresa">Empresa</a>
-<a href="#aws">Arquitectura AWS</a>
-<a href="#servicios">Servicios</a>
-<a href="#beneficios">Beneficios</a>
-<a href="#contacto">Contacto</a>
+
+<div class="logo">
+🏥 Salud Digital
+</div>
+
+<ul>
+<li><a href="#empresa">Empresa</a></li>
+<li><a href="#arquitectura">Arquitectura</a></li>
+<li><a href="#servicios">Servicios</a></li>
+<li><a href="#beneficios">Beneficios</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+
 </nav>
 
+<header>
+
+<div class="hero">
+
+<h1>Salud Digital Colombia S.A.S.</h1>
+
+<p>
+Proyecto Integrador de Cloud Computing basado en una arquitectura Cloud Native sobre AWS.
+</p>
+
+<button onclick="alert('Función simulada para la demostración académica.')">
+Agendar cita
+</button>
+
+</div>
+
+</header>
+
 <section id="empresa">
-<h2>Quiénes Somos</h2>
-<p>Salud Digital Colombia S.A.S. es una empresa ficticia creada para el proyecto académico. La solución propone migrar una plataforma del sector salud a una arquitectura Cloud Native sobre AWS.</p>
+
+<h2 class="section-title">¿Quiénes Somos?</h2>
+
+<p class="subtitle">
+
+Salud Digital Colombia S.A.S. es una empresa ficticia creada para el proyecto académico. La propuesta consiste en migrar una plataforma del sector salud hacia una arquitectura Cloud Native utilizando los servicios de Amazon Web Services (AWS).
+
+</p>
+
 </section>
 
-<section id="aws">
-<h2>Arquitectura Propuesta</h2>
-<div class="cards">
-<div class="card"><h3>Amazon VPC</h3><p>Red privada segura.</p></div>
-<div class="card"><h3>EC2 + Docker</h3><p>Ejecución de microservicios.</p></div>
-<div class="card"><h3>Amazon RDS</h3><p>Base de datos Multi-AZ.</p></div>
-<div class="card"><h3>Amazon S3</h3><p>Almacenamiento de archivos clínicos.</p></div>
-<div class="card"><h3>AWS IAM</h3><p>Control de acceso.</p></div>
-<div class="card"><h3>CloudWatch</h3><p>Monitoreo y alertas.</p></div>
-<div class="card"><h3>AWS WAF</h3><p>Protección perimetral.</p></div>
-<div class="card"><h3>AWS Backup</h3><p>Respaldos automáticos.</p></div>
+<section id="arquitectura">
+
+<h2 class="section-title">Arquitectura AWS</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🌐</div>
+<h3>Amazon VPC</h3>
+<p>Red privada segura para todos los recursos de la aplicación.</p>
 </div>
+
+<div class="card">
+<div class="icon">🐳</div>
+<h3>EC2 + Docker</h3>
+<p>Ejecución de microservicios de manera flexible y escalable.</p>
+</div>
+
+<div class="card">
+<div class="icon">🗄️</div>
+<h3>Amazon RDS</h3>
+<p>Base de datos administrada con alta disponibilidad Multi-AZ.</p>
+</div>
+
+<div class="card">
+<div class="icon">☁️</div>
+<h3>Amazon S3</h3>
+<p>Almacenamiento seguro para archivos clínicos y documentos.</p>
+</div>
+
+<div class="card">
+<div class="icon">🔐</div>
+<h3>AWS IAM</h3>
+<p>Administración segura de usuarios, permisos y roles.</p>
+</div>
+
+<div class="card">
+<div class="icon">📈</div>
+<h3>CloudWatch</h3>
+<p>Monitoreo del rendimiento y generación de alertas.</p>
+</div>
+
+<div class="card">
+<div class="icon">🛡️</div>
+<h3>AWS WAF</h3>
+<p>Protección perimetral frente a amenazas web.</p>
+</div>
+
+<div class="card">
+<div class="icon">💾</div>
+<h3>AWS Backup</h3>
+<p>Copias de seguridad automáticas y recuperación de información.</p>
+</div>
+
+</div>
+
 </section>
 
 <section id="servicios">
-<h2>Servicios</h2>
-<ul>
-<li>Gestión de pacientes</li>
-<li>Agendamiento de citas</li>
-<li>Historia clínica digital</li>
-<li>Notificaciones</li>
-<li>Reportes médicos</li>
-</ul>
+
+<h2 class="section-title">Servicios</h2>
+
+<div class="services">
+
+<div class="service">👨‍⚕️ Gestión de pacientes</div>
+
+<div class="service">📅 Agendamiento de citas</div>
+
+<div class="service">📄 Historia clínica digital</div>
+
+<div class="service">🔔 Notificaciones</div>
+
+<div class="service">📊 Reportes médicos</div>
+
+</div>
+
 </section>
 
 <section id="beneficios">
-<h2>Beneficios</h2>
-<div class="cards">
-<div class="card">Alta disponibilidad (SLA 99.95%).</div>
-<div class="card">Escalabilidad automática.</div>
-<div class="card">Mayor seguridad.</div>
-<div class="card">Reducción de costos.</div>
+
+<h2 class="section-title">Beneficios</h2>
+
+<div class="benefits">
+
+<div class="benefit">
+🚀<br><br>
+Alta disponibilidad (SLA 99.95%)
 </div>
+
+<div class="benefit">
+📈<br><br>
+Escalabilidad automática
+</div>
+
+<div class="benefit">
+🔒<br><br>
+Mayor seguridad
+</div>
+
+<div class="benefit">
+💰<br><br>
+Reducción de costos
+</div>
+
+</div>
+
 </section>
 
 <section id="contacto">
-<h2>Contacto</h2>
-<p>Email: contacto@saluddigitalcolombia.com</p>
-<p>Bogotá D.C., Colombia</p>
+
+<h2 class="section-title">Contacto</h2>
+
+<div class="contact">
+
+<h3>Estamos para ayudarte</h3>
+<h3>
+Yair Kaleth Pérez Vivas
+</h3>
+<h3>
+    Julian David Reyes Hernandez</h3
+<p>📧 contacto@saluddigitalcolombia.com</p>
+
+<p>📍 Bogotá D.C., Colombia</p>
+
+</div>
+
 </section>
 
 <footer>
-Proyecto académico de Cloud Computing · Salud Digital Colombia S.A.S.
+
+<strong>Proyecto Académico de Cloud Computing</strong><br>
+
+Salud Digital Colombia S.A.S.
+
 </footer>
 
 </body>
